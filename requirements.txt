@@ -1,0 +1,13 @@
+streamlit
+unstructured
+tiktoken
+libmagic
+python-magic
+pickle-mixin
+requests
+pickle-mixin
+langchain
+sentence-transformers
+faiss-cpu
+langchain-groq
+langchain-community
