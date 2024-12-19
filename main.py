@@ -10,7 +10,7 @@ from langchain_community.document_loaders import UnstructuredURLLoader
 import nltk
 
 nltk.download("punkt")
-
+API_KEY = os.environ.get('API_KEY_GROQ')
 st.title("RockyBot: News Research Tool 📈")
 st.sidebar.title("News Article URLs")
 
@@ -28,7 +28,7 @@ main_placeholder = st.empty()
 # Initialize the ChatGroq LLM
 llm = ChatGroq(
     temperature=0,
-    api_key="you_api_key",
+    api_key=API_KEY,
     model_name="llama-3.1-70b-versatile",
 )
 
