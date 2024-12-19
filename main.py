@@ -21,7 +21,7 @@ for i in range(3):
     urls.append(url)
 
 process_url_clicked = st.sidebar.button("Process URLs")
-file_path = "faiss_store_openai.pkl"
+file_path = "faiss_store.pkl"
 
 main_placeholder = st.empty()
 
@@ -61,11 +61,11 @@ if process_url_clicked:
         # Create embeddings and FAISS index
         main_placeholder.text("Embedding Vector Started Building...✅✅✅")
         embeddings = SentenceTransformerEmbeddings(model_name="all-mpnet-base-v2")
-        vectorstore_openai = FAISS.from_documents(docs, embeddings)
+        vectorstore = FAISS.from_documents(docs, embeddings)
 
         # Save the FAISS index to a pickle file
         with open(file_path, "wb") as f:
-            pickle.dump(vectorstore_openai, f)
+            pickle.dump(vectorstore, f)
 
     except Exception as e:
         st.error(f"Error processing URLs: {e}")
