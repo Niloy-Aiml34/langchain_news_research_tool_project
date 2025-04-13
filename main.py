@@ -11,7 +11,7 @@ import nltk
 
 nltk.download("punkt")
 API_KEY = os.environ.get('API_KEY_GROQ')
-st.title("RockyBot: News Research Tool 📈")
+st.title("News Research Tool 📈")
 st.sidebar.title("News Article URLs")
 
 # Sidebar input for URLs
